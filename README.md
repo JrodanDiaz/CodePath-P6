@@ -1,10 +1,10 @@
-# Web Development Project 6 - _Name of App Here_
+# Web Development Project 6 - Event Finder
 
 Submitted by: Jordan Diaz
 
-This web app: **insert description**
+This web app: Find specific events in your State and City, and also see a visualization of the most popular venues and average prices of the events
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
@@ -26,6 +26,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
+![WalkthroughCodePathProject6](https://github.com/JrodanDiaz/CodePath-P6/assets/129818825/1adb66b8-7595-482b-8b2f-01d44c241a32)
+
 
 GIF created with LiceCap
 
