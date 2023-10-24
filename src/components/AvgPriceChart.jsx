@@ -19,7 +19,7 @@ export default function AvgPriceChart({ events }) {
       events.forEach((event) => {
         if (event.stats?.average_price) {
           data.push({
-            Artist: event.performers[0].name,
+            Artist: event.title,
             AveragePrice: event.stats.average_price,
           });
           console.log(`event.performers.name: ${event.performers[0].name}`);

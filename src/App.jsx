@@ -1,9 +1,14 @@
-import EventList from "./components/EventList";
-import QueryList from "./components/QueryList";
-import { useEffect, useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Client_Secret = import.meta.env.VITE_CLIENT_SECRET;
 const clientID = import.meta.env.VITE_CLIENT_ID;
+import { useEffect, useState } from "react";
+import EventList from "./components/EventList";
+import QueryList from "./components/QueryList";
+import VenueChart from "./components/VenueChart";
+import EventDetailCard from "./components/EventDetailCard";
+import AvgPriceChart from "./components/AvgPriceChart";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const [events, setEvents] = useState(null);
@@ -29,20 +34,36 @@ function App() {
     fetchEventData();
   }, [state, city, eventType]);
 
+  const Home = () => {
+    return (
+      <>
+        <div className="app-container">
+          <div className="app-wrapper">
+            <QueryList
+              state={state}
+              setState={setState}
+              city={city}
+              setCity={setCity}
+              eventType={eventType}
+              setEventType={setEventType}
+            />
+            <VenueChart events={events} />
+            <AvgPriceChart events={events} />
+            <EventList events={events} />
+          </div>
+        </div>
+      </>
+    );
+  };
+
   return (
-    <>
-      <div className="app-wrapper">
-        <QueryList
-          state={state}
-          setState={setState}
-          city={city}
-          setCity={setCity}
-          eventType={eventType}
-          setEventType={setEventType}
-        />
-        <EventList events={events} />
-      </div>
-    </>
+    <BrowserRouter>
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/id/:id" element={<EventDetailCard events={events} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
