@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: bisque;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .app-wrapper {
@@ -8,13 +15,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 1rem;
+  margin: 2rem 1rem 2rem 16rem;
+}
+
+.query {
+  color: #8884d8;
 }
 
 .querydata-wrapper {
-  width: 80vw;
-
-  background-color: antiquewhite;
+  width: 70vw;
+  margin: 10px;
 }
 
 .querydata-row {
@@ -23,17 +33,21 @@
 }
 
 .query-data-container {
-  border: 2px solid black;
+  border: 3px solid black;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
 }
 
 .EventList-wrapper {
-  width: 80vw;
-  background-color: aquamarine;
+  width: 60vw;
+  background-color: white;
   padding: 15px;
+  border: 5px solid black;
 }
 
 .data-wrapper {
-  background-color: antiquewhite;
+  background-color: white;
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
@@ -51,8 +65,53 @@ table {
 
 th {
   font-size: 24pt;
+  color: #e8003a;
 }
 
 td {
   font-size: 16pt;
+}
+
+.event-detail-card {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-detail-txt-wrapper {
+  background-color: white;
+  padding: 30px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.venue-chart-container {
+  background-color: white;
+  border: 4px solid black;
+  text-align: center;
+  padding: 10px 30px 0px 10px;
+  margin: 10px;
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: azure;
+  height: 100vh;
+  width: 14vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
